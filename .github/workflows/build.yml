@@ -1,0 +1,17 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  Exam1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: Homework1_HingstmanJeffrey
+      - uses: actions/upload-artifact@v2
+        with:
+          name: AoM_Homework_1
+          path: AoM_Homework_1.pdf  
+    if: github.ref == 'refs/heads/main'
