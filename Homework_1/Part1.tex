@@ -1,1 +1,11 @@
 \section{Conceptual}
+A lot of my interest in manifolds and its ways of analysis, stems from courses that I followed in robotics and nonlinear control. In robotics for example, the space of reachable positions of a manipulator arm is topological manifold. Take a two-link rotational actuator that has two separate axes of rotation. Its reachable workspace $W$ is then a torus 
+\[
+W = \mathbb{S}^1 \times  \mathbb{S}^1.
+\]
+
+As cool and mathematical as this can sound, stating that this is a topological manifold has yet no value in engineering. However, when looking into the deeper underlying structures, one discovers a dynamic of Lie groups and Lie algebras. The Lie elements in these Lie group are really the building blocks of your kinematics, where its respective algebras are its mortar that holds everything together. 
+
+A nice engineering problem can be found in trajectory planning. Making the preceding robotic arm follow a straight movement in euclidean space, can be performed by direct calculation of how you need to position your actuators (mapping the end-effector coordinate from $ \mathbb{S}^1 \times  \mathbb{S}^1$ into $\mathbb{R}^2$), i.e.  in the group/manifold structure, but one can also calculate a transition map directly on the algebra from the current Lie element to the next nearby element, involving some clever trickery with Jacobians. The latter being in general less computationally expensive, since you only have to look at simple local euclidean behaviour.
+
+Being able to look at such problems in a very localized euclidean way, gives us the power to 'divide-and-conquer' difficult geometric shapes into algebras with addition and subtraction operations, such that a computer can come to the rescue.
