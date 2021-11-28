@@ -14,4 +14,4 @@ jobs:
         with:
           name: AoM_Homework_1
           path: Homework1_HingstmanJeffrey.pdf  
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
