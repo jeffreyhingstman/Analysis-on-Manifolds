@@ -13,5 +13,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: AoM_Homework_1
-          path: AoM_Homework_1.pdf  
+          path: Homework1_HingstmanJeffrey.pdf  
     if: github.ref == 'refs/heads/main'
