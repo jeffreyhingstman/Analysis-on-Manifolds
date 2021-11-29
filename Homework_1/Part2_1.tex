@@ -1,2 +1,22 @@
 \section{Problems}
 \subsection{}
+Taking part of the definition of an $n$-manifold from Lee: 
+\textit{"If $M$ is locally euclidean of dimension $n$, then each point of $M$ has a neighbourhood that is homeomorphic to an open subset of $\mathbb{R}^n$." } Thus for every point $p$ in the manifold, we should be able to find $p\in U \subseteq M$,  an open subset $\hat{U} \subseteq \mathbb{R}^n$ and a homeomorphism $\phi:U\rightarrow \hat{U}$. In my own words, it should be possible for every point on the manifold, to map this into a local euclidean representation. Reaching points in the neighbourhood on the manifold, has a direct correspondence with locally moving around in $\mathbb{R}^n$.
+
+
+
+Define a map that takes us back into the preimage of $f$, i.e.
+\[
+\pi_1:\Rn\times \Rk \rightarrow \Rn
+\]
+which we apply (restrict) to 
+\[
+\phi:\Gamma(f)\rightarrow U,
+\]
+i.e. projects the graph back into the "input space." 
+Then for all $(x,y)\in \Gamma(f)$, we can define $\phi(x,y)=x$,. Since $\phi$ has a continuous inverse 
+\[\phi^{-1}(x)=(x,y) \quad \forall x\in U, \]
+U and $\Gamma$ are homeomorphic. By the topological invariance of dimension (Lee), $\Gamma$ has the same dimension as $U\subseteq \Rn$, which is $n$.
+
+A simple way of visualizing would be with a simple continuous $x-y$ graph in $\mathbb{R}^2$. When 'zooming in' on the graph, you will find a near straight line element, that is, by some rotation and scaling, homeomorphic to $\mathbb{R}^1$, i.e. its input space and thus the dimension of the graph. 
+

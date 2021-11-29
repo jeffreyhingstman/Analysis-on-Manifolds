@@ -15,6 +15,8 @@
 \CatchFileDef{\commit}{\gitfolder/refs/heads/\branch}{}  % Get the content of the branch head
 \StrGobbleRight{\commit}{1}[\commithash]                  % Remove end of line character
 
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Rk}{\mathbb{R}^k}
 
 
 \begin{document}
@@ -28,6 +30,7 @@
 	\clearpage
 	\include{Homework_1/Part1.tex}
 	\include{Homework_1/Part2_1.tex}
+	\include{Homework_1/Part2_2.tex}
 
 	
 \end{document}

@@ -1,0 +1,25 @@
+\subsection{}
+To start simple, lets confine ourselves first to the 2D case. We then have a mapping
+\[
+\sigma : \mathbb{S}^1 \backslash \{N\} \rightarrow \mathbb{R}^2 
+\]
+If we parameterize this around a point $p$ on $\mathbb{S}^2$ in the upper-half unit circle for $(x_p^1,x_p^2)\in \mathbb{R}^2$:
+\[
+x_p^2 = \sqrt{1-(x_p^1)^2}
+\]
+for which one can span a line $L$ through $N$ and $(x_p^1,x_p^2)$, namely:
+\[
+	L = 1 + ax^1 = 1 + \dfrac{\sqrt{1-(x_p^1)^2}-1}{x_p^1}x^1
+\]
+such that when $\Gamma(L)=(u, 0)$, it crosses the horizontal line $(x_1, 0) \in \mathbb{R}^2$:
+\[
+\begin{split}
+	\dfrac{\sqrt{1-(x_p^1)^2}-1}{x_p^1}x^1 &= -1 \\
+	x_1 &= \dfrac{x_p^1}{1-x_p^2}
+\end{split}
+\]
+Thus, the projection $\sigma$ maps the intersection $N$ and any point $p = (x_p^1, x_p^2)$, such that one can write: 
+\[
+\sigma(x^1, x^2) \backslash \{N\} \rightarrow \left(\dfrac{x^1}{1-x^2}, 0\right).
+\]
+One can notice that the half-unit circle is not necessary to be parametrized for $x^2$ in terms of $x^1$, the square root term can be entirely replaced by $x^2$ itself. This  implies that not just $\mathbb{S}^1$, but basically any point in $\mathbb{R}^2$ can be mapped to the lower dimensional projective hyperplane.
