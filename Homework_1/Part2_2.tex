@@ -1,7 +1,8 @@
 \subsection{}
-To start simple, lets confine ourselves first to the 2D case. We then have a mapping
+\subsubsection{}
+To start simple, lets confine ourselves first to the $\mathbb{R}^2$ case, where for the unit circle $n=1$. We then have a mapping
 \[
-\sigma : \mathbb{S}^1 \backslash \{N\} \rightarrow \mathbb{R}^2 
+\sigma : \mathbb{S}^1 \backslash \{N\} \rightarrow \mathbb{R}^2. 
 \]
 If we parameterize this around a point $p$ on $\mathbb{S}^2$ in the upper-half unit circle for $(x_p^1,x_p^2)\in \mathbb{R}^2$:
 \[
@@ -22,4 +23,90 @@ Thus, the projection $\sigma$ maps the intersection $N$ and any point $p = (x_p^
 \[
 \sigma(x^1, x^2) \backslash \{N\} \rightarrow \left(\dfrac{x^1}{1-x^2}, 0\right).
 \]
-One can notice that the half-unit circle is not necessary to be parametrized for $x^2$ in terms of $x^1$, the square root term can be entirely replaced by $x^2$ itself. This  implies that not just $\mathbb{S}^1$, but basically any point in $\mathbb{R}^2$ can be mapped to the lower dimensional projective hyperplane.
+One can notice that the half-unit circle is not necessary to be parametrized for $x^2$ in terms of $x^1$, the square root term can be entirely replaced by $x^2$ itself. This  implies that not just $\mathbb{S}^1\backslash \{N\} $, but basically any point in $\mathbb{R}^2\backslash \{N\} $ can be mapped to the lower dimensional projective hyperplane.\footnote{This does come at a cost of uniqueness, points on the same line spanning through $N$ will of course end up in the same location in the hyperplane $\mathbb{R}^n$.}
+
+The 2-dimensional example can be easily extended to the $n$-dimensional form. The line spanning through $x_p$ and $N$ then has a differential form defined as:
+\[
+L = x_p^{n+1} = 1 + \dfrac{x_p^{n+1} - 1}{x_p^1} x^1 + \dfrac{x_p^{n+1} - 1}{x_p^2} x^2 + \dots + \dfrac{x_p^{n+1} - 1}{x_p^{n}} x^{n}
+\]
+i.e., every coordinate $x^i$ instead has a mapping 
+\[
+\dfrac{x^i}{1-x^{n+1}} \quad \forall i \in 1\dots n
+\]
+
+\subsubsection{}
+For $\sigma^{-1}(u)$, we take a single element:
+\[
+	\dfrac{2u^i}{||u||^2 + 1} \quad \textnormal{where} \quad u^i = \dfrac{x^i}{1-x^{n+1}}
+\]
+such that
+\[
+	\dfrac{2u^i}{||u||^2 + 1} = \dfrac{2x^i}{(1-x^{n+1})(||u||^2 + 1)}
+\]
+Here, we can rewrite $||u||^2$ as
+\[
+||u||^2 = \sum_{i\in 1\dots n}\dfrac{(x^i)^2}{(1-x^{n+1})^2} = \dfrac{\sum_{i\in 1\dots n}(x^i)^2}{(1-x^{n+1})^2}
+\]
+so that we are able to write 
+\[
+\begin{split}
+\dfrac{2x^i}{(1-x^{n+1})(||u||^2 + 1)} &= \dfrac{2x^i}{(1-x^{n+1})\left(\dfrac{\sum_{i\in 1\dots n}(x^i)^2}{(1-x^{n+1})^2} + 1\right)} \\
+&= \dfrac{2x^i}{\dfrac{\sum_{i\in 1\dots n}(x^i)^2}{1-x^{n+1}} + 1-x^{n+1}}\\
+&= \dfrac{2x^i}{\dfrac{\sum_{i\in 1\dots n}(x^i)^2 + (x^{n+1})^2 -2x^{n+1} + 1}{1-x^{n+1}}}
+\end{split} 
+\]
+where for $x\in \mathbb{S}^n$
+\[
+\sum_{i\in 1\dots n}(x^i)^2 + (x^{n+1})^2 = ||x||^2 = 1
+\]
+such that
+\[
+\begin{split}
+	\dfrac{2x^i}{\dfrac{\sum_{i\in 1\dots n}(x^i)^2 + (x^{n+1})^2 -2x^{n+1} + 1}{1-x^{n+1}}} = \dfrac{2x^i}{\dfrac{1 - 2x^{n+1} + 1}{1-x^{n+1}}} = \dfrac{2x^i}{\dfrac{2(1 - x^{n+1})}{1-x^{n+1}}} = x^i
+\end{split} 
+\]
+Concluding, $\sigma^{-1}(u)$ maps all $u^i$ to $x^i$.
+
+\subsubsection{}
+A commutative diagram of the operation can be seen in Fig. \ref{tikz:composite}. To support this operation, the intersection of $ \mathbb{S}^n \backslash \{N\}$ and $ \mathbb{S}^n \backslash \{S\}$ is to be used in the transition map (where the charts are compatible). These charts are thus part of an atlas $\mathcal{A}$ that encompasses them both.
+\[
+ \mathbb{S}^n \backslash \{N\} \cap  \mathbb{S}^n \backslash \{S\} =  \mathbb{S}^n \backslash \{N, S\}
+\]
+The charts are compatible, such that their union within the Atlas defined as:
+\[
+	 \mathbb{S}^n \backslash \{N\} \cup  \mathbb{S}^n \backslash \{S\} =  \mathbb{S}^n
+\]
+covers $\mathbb{S}^n$.
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzcd}
+		{} & x \in \mathbb{S}^n \backslash \{N\} \arrow[d, "\sim"]    \subset \mathbb{R}^{n+1}       & u \in \mathbb{R}^n \arrow[l, "\sigma^{-1}"] \\
+		& x \in \mathbb{S}^n \backslash \{S\} \arrow[r, "\tilde{\sigma}"]\subset \mathbb{R}^{n+1}  & \tilde{u} \in \mathbb{R}^n              
+	\end{tikzcd}
+\caption{Commutative diagram for $\tilde{\sigma}\circ\sigma^{-1}$}
+\label{tikz:composite}   
+\end{figure}
+Write the standard inverse map for $\sigma$:
+\begin{equation}
+	\label{eq:invsigma}
+\sigma^{-1}(u) = \left(\dfrac{2u^1}{||u||^2 + 1}, \dots ,\dfrac{2u^n}{||u||^2 + 1}, \dfrac{||u||^2-1}{||u||^2+1} \right)
+\end{equation}
+and its forward south-pole equivalent:
+\begin{equation}
+	\label{eq:tildesigma}
+	\tilde{\sigma}(x) = -\sigma(-x) = \left(\dfrac{-x^1}{1+x^{n+1}}, \dots , \dfrac{-x^n}{1+x^{n+1}}\right),
+\end{equation}
+we can force the elements of \eqref{eq:invsigma} into \eqref{eq:tildesigma} such that we end up with:
+\[
+\tilde{\sigma}\circ\sigma^{-1} = \left(\dfrac{\dfrac{-2u^1}{||u||^2 + 1}}{1 + \dfrac{||u||^2 - 1}{||u||^2 + 1}}, \dots \right) = \left(\dfrac{-2u^1}{2||u||^2}, \dots \right) = \left( \dfrac{-u^1}{||u||^2}, \dots \right)
+\]
+i.e. 
+\[
+	\tilde{\sigma}\circ\sigma^{-1} : u \rightarrow \tilde{u} = \left( \dfrac{-u^1}{||u||^2} ,\dfrac{-u^2}{||u||^2}, \dots, \dfrac{-u^n}{||u||^2} \right)
+\]
+This map is bijective between $u$ and $\tilde(u)$ in $\mathbb{R}^n$ since every coordinate has a linear one-to-one correspondence, and is smooth if $||u|| \neq 0$.
+To show that the atlas defines a smooth structure on $\mathbb{S^n}$,  we are left with the task to show if the transition map 	$\tilde{\sigma}\circ\sigma^{-1} : u \cap \tilde{u} \rightarrow u \cap \tilde{u}$ is a smooth diffeomorhpsim.
+
+\subsubsection{} 
+The atlas of the stereographic projection basically performs the same operation with its charts as in example 1.2.14. The big difference is that we don't project straightly inward to a hyperplane, but at an angle with the line spanning the north/south pole and the hyperplane.With the explicit inclusion of both projections in the stereographic atlas, the north and south pole are included in the $\mathbb{S}^1$ structure as in ex. 1.2.14. Since both atlasses encompass the same manifold, they are related by an equivalence class and thus define a smooth structure.
