@@ -3,5 +3,7 @@
 *.pdf
 *.gz
 *.out
+*.synctex
+*.DS_Store
 !*/Figures/*.pdf
 !*/Documents/*.pdf
