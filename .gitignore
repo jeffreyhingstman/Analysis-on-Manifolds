@@ -7,3 +7,4 @@
 *.DS_Store
 !*/Figures/*.pdf
 !*/Documents/*.pdf
+!Documents/*.pdf
