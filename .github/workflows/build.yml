@@ -14,4 +14,17 @@ jobs:
         with:
           name: AoM_Homework_1
           path: Homework1_HingstmanJeffrey.pdf  
+  Homework_3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: Homework3_HingstmanJeffrey.tex
+      - uses: actions/upload-artifact@v2
+        with:
+          name: AoM_Homework_3
+          path: Homework3_HingstmanJeffrey.pdf  
     if: github.ref == 'refs/heads/master'
