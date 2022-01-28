@@ -3,5 +3,9 @@
 *.pdf
 *.gz
 *.out
+*.synctex
+*.synctex(busy)
+*.DS_Store
 !*/Figures/*.pdf
 !*/Documents/*.pdf
+!Documents/*.pdf

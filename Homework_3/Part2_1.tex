@@ -1,0 +1,38 @@
+\part{Problems}
+\section{}
+\subsection{} 
+The integral $\int_{\gamma}\omega$ is fully defined on the manifold $M$, and within its respective tangent / cotangent space, namely for
+\[
+\omega \in \mathfrak{X} \qquad and \qquad \gamma_t \in \mathcal{M}
+\]  
+Since this is not a nice shape to do integrals in, one may want to pull back these expressions onto $\mathbb{R}$. 
+The general definition of a pullback,
+\[ F^* : \mathfrak{X}^*(N) \rightarrow \mathfrak{X}^*(M) \]
+one could perform the same action for a curve $\gamma$ mapping $I$ onto $M$, i.e.
+\[ \gamma^* : \mathfrak{X}^*(M) \rightarrow \mathfrak{X}^*(I) \]
+To define a coordinates and a basis for computation, we assign $t\in[a, b]$ to $\gamma$ s.t.
+\[ \gamma \equiv \gamma(t)\]
+and that we can write a basis for the tangent space to T w.r.t. $\gamma$, namely
+\[ \frac{\partial}{\partial t} : I \rightarrow TI.\]
+We thus want to pullback the covector field  $\mathfrak{X}^*(M)$, back onto $I$, such that it acts as a differential 1-form onto the smooth structure of $\gamma$, namely $\frac{\partial }{\partial t}$:
+\[ 
+	\left((\gamma^*\omega)\bigr\rvert_t,  v \right) = \left(\omega_{\gamma(t)}, d\gamma_t\right) =  \left(\omega, \gamma' _tdt\right) = \omega_{\gamma(t)}\left(\gamma'_tdt\right)
+\] 
+where $v = v^i\frac{\partial}{\partial t^i}$
+What basically happens is that $\omega = \omega_id\gamma^i$ is sent onto $T^*I$ by the mapping $\frac{\partial \gamma}{\partial x}$
+
+\subsection{}
+The objective is to pullback the covector $\omega$ in the cotangent space of $M$, back to $J$ via the route $\gamma \circ F $, and compare this with the direct route of $\delta$ as is stated in the problem. I.e. first pull back to $I$:
+\[ \int_\gamma \omega = \int_I \gamma^*\omega = \int_J F^* \gamma^*\omega\]
+where we can work out the latter as
+\[\int_J F^*\gamma^*\omega = \int_J F^* \omega_{\gamma(t)}(\gamma'(t)) = \int_J\omega_{(\gamma\circ F)(\tau)}\left( \gamma'(F(\tau))F'(\tau)  \right) \]
+where $\tau$ parametrizes the preimage  $F^{-1}I$.
+Resultingly, we can write
+\[\int_J\omega_{\gamma(F(\tau))}\left( \gamma'(F(\tau))F'(\tau)  \right) =  \int_J \omega_{\delta}(\delta') = \int_J \delta^*\omega = \int_\delta \omega\]
+to conclude the proof.
+
+\subsection{} 
+By duality, we can write
+\[
+\begin{split} \int_\gamma df = \int_I \gamma^*df = \int_I df_{\gamma(t)}(d\gamma (t)) = \int_Idf_{\gamma(t)}(\gamma'(t)dt) = \int_I \frac{d}{dt}f(\gamma(t)) \\  = f(\gamma(b)) - f(\gamma(a))
+\end{split}\]

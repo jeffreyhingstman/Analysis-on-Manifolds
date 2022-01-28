@@ -1,0 +1,36 @@
+\documentclass[a4paper, 12pt]{article}
+\input{format/preamble.tex}
+\input{format/Styles/homework.tex}
+\input{format/Styles/linalg.tex}
+\input{format/Styles/lie.tex}
+
+
+
+% Set user input
+\newcommand{\gitfolder}{.git}             % Relative path to .git folder from .tex file
+\newcommand{\reponame}{https://github.com/jeffreyhingstman/AnalysisOnManifolds}    % Name of account and repo. Will be included in URL
+\CatchFileDef{\headfull}{\gitfolder/HEAD}{}              % Get path to head file for checked out branch
+\StrGobbleRight{\headfull}{1}[\head]                      % Remove end of line character
+\StrBehind[2]{\head}{/}[\branch]                          % Parse out the path only
+\CatchFileDef{\commit}{\gitfolder/refs/heads/\branch}{}  % Get the content of the branch head
+\StrGobbleRight{\commit}{1}[\commithash]                  % Remove end of line character
+
+\newcommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Rk}{\mathbb{R}^k}
+
+
+\begin{document}
+	\title{Analysis on Manifolds \\[0.5cm] \large{Homework 3}} 
+	\date{\today}
+	\author{Jeffrey Hingstman, s4590465}	\maketitle
+	\vspace*{\fill}
+	\noindent
+	URL: \url{\reponame} \\
+	SHA: \commithash
+	\clearpage
+	\input{Homework_3/Part1.tex}
+	\input{Homework_3/Part2_1.tex}
+	\input{Homework_3/Part3.tex}
+
+	
+\end{document}
