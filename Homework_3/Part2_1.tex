@@ -1,5 +1,6 @@
-\section{Problems}
-\subsection{}
+\part{Problems}
+\section{}
+\subsection{} 
 The integral $\int_{\gamma}\omega$ is fully defined on the manifold $M$, and within its respective tangent / cotangent space, namely for
 \[
 \omega \in \mathfrak{X} \qquad and \qquad \gamma_t \in \mathcal{M}
@@ -25,7 +26,13 @@ The objective is to pullback the covector $\omega$ in the cotangent space of $M$
 \[ \int_\gamma \omega = \int_I \gamma^*\omega = \int_J F^* \gamma^*\omega\]
 where we can work out the latter as
 \[\int_J F^*\gamma^*\omega = \int_J F^* \omega_{\gamma(t)}(\gamma'(t)) = \int_J\omega_{(\gamma\circ F)(\tau)}\left( \gamma'(F(\tau))F'(\tau)  \right) \]
-where $\tau$ parameterizes the preimage  $F^{-1}I$.
+where $\tau$ parametrizes the preimage  $F^{-1}I$.
 Resultingly, we can write
 \[\int_J\omega_{\gamma(F(\tau))}\left( \gamma'(F(\tau))F'(\tau)  \right) =  \int_J \omega_{\delta}(\delta') = \int_J \delta^*\omega = \int_\delta \omega\]
 to conclude the proof.
+
+\subsection{} 
+By duality, we can write
+\[
+\begin{split} \int_\gamma df = \int_I \gamma^*df = \int_I df_{\gamma(t)}(d\gamma (t)) = \int_Idf_{\gamma(t)}(\gamma'(t)dt) = \int_I \frac{d}{dt}f(\gamma(t)) \\  = f(\gamma(b)) - f(\gamma(a))
+\end{split}\]
